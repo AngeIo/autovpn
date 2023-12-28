@@ -1,0 +1,16 @@
+# Please modify the following variables to match your environment
+
+# This is the path to the executable used to launch the VPN client using command line called the launcher
+vpn_launcher = "C:\Program Files (x86)\Common Files\Pulse Secure\Integration\pulselauncher.exe"
+
+# This is the URL used to connect to your company's VPN server
+vpn_url = "https://myvpn.company.com/myportal"
+
+# Your VPN username
+vpn_user = "vpnuser"
+
+# Your VPN password, encrypted with the 'pwgen.py' script
+vpn_pw = "gAAAAABlSSIKowbS_lv9sKG24euFIVt3NTg0oK5hvA3cO6UxvUk7gNi7GZYOsNZvuRAZhl7zA4XkuU_UtmZ0nFQJi-_WRlhalg=="
+
+# The default domain of the VPN's internal network
+vpn_domain = "internal.company.com"
