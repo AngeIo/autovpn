@@ -62,6 +62,12 @@ Utilize the dedicated script in the `utils` directory to generate an encrypted v
 python utils/pwgen.py "MyStrongPassword"
 ```
 
+Or type the same command without the password at the end to type it hidden:
+
+```shell
+python utils/pwgen.py
+```
+
 ### Variables configuration
 You have to:
 
