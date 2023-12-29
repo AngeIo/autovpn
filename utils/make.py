@@ -2,7 +2,12 @@ import os
 import shutil
 import glob
 import sys
+import sysconfig
+import winreg
 from win32com.client import Dispatch
+import subprocess
+import winshell
+import requests
 import ctypes
 
 program_name = "autovpn"
@@ -12,6 +17,16 @@ parent_dir = os.path.dirname(current_dir)
 
 def parent_dir_file_path(path):
     return os.path.join(parent_dir, path)
+
+def get_reg(name,path):
+    try:
+        registry_key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, path, 0,
+                                       winreg.KEY_READ)
+        value, regtype = winreg.QueryValueEx(registry_key, name)
+        winreg.CloseKey(registry_key)
+        return value
+    except WindowsError:
+        return None
 
 # Remove autovpn.exe in the current directory
 if os.path.exists(parent_dir_file_path(program_name + '.exe')):
@@ -40,6 +55,50 @@ target = parent_dir_file_path(program_name + '.exe')
 
 # Name of link file
 linkName = program_name + '.lnk'
+
+# Read location of Windows desktop folder from registry
+desktopFolder = os.path.normpath(get_reg('Desktop', r'Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'))
+
+# Path to location of link file
+pathLink = os.path.join(desktopFolder, linkName)
+shell = Dispatch('WScript.Shell')
+shortcut = shell.CreateShortCut(pathLink)
+shortcut.Targetpath = target
+shortcut.WorkingDirectory = parent_dir
+shortcut.IconLocation = parent_dir_file_path('assets/icon.ico')
+shortcut.save()
+
+# --- Shortcut creation to user taskbar (pin) ---
+program_name_pttb = 'pttb.exe'
+program_path_pttb = shutil.which(program_name_pttb)
+
+if program_path_pttb is None:
+    # The program is not installed, download it
+    url = 'https://github.com/0x546F6D/pttb_-_Pin_To_TaskBar/releases/download/230124/pttb.exe'
+    response = requests.get(url, allow_redirects=True)
+
+    # Save the program to the current directory
+    with open(program_name_pttb, 'wb') as f:
+        f.write(response.content)
+
+    print(f"{program_name_pttb} downloaded.")
+else:
+    print(f"{program_name_pttb} is already installed.")
+
+# --- Create a shortcut to the taskbar ---
+desktop = winshell.desktop()
+pathLink = os.path.join(desktop, f"{program_name}.lnk")
+target = os.path.join(parent_dir, f"{program_name}.exe")
+icon = parent_dir_file_path('assets/icon.ico')
+shell = Dispatch('WScript.Shell')
+shortcut = shell.CreateShortcut(pathLink)
+shortcut.TargetPath = target
+shortcut.IconLocation = icon
+shortcut.save()
+
+# Run the program and pin it to the taskbar
+command = [program_name_pttb, target]
+subprocess.run(command, shell=True)
 
 # --- Remove temp build files ---
 # Remove .spec files
@@ -75,7 +134,6 @@ if flag_autostart == False:
 if answer == 6 or flag_autostart == True:
     # Add script to Windows startup process
     icon = parent_dir_file_path('assets/icon.ico')
-    shell = Dispatch('WScript.Shell')
     shortcut_startup = shell.CreateShortcut(startup_pathLink)
     shortcut_startup.TargetPath = target
     shortcut_startup.IconLocation = icon
