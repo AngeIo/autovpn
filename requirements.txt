@@ -1,3 +1,5 @@
 cryptography==36.0.1
 pywin32==306
+Requests==2.31.0
 tldextract==5.1.1
+winshell==0.6
