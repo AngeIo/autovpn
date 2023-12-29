@@ -80,9 +80,11 @@ python utils/make.py
 To execute the script, start your Windows PC to run `autovpn`!
 
 ## License
-The source code for "autovpn" is using a *???* license (we haven't decided yet).
+The source code for "autovpn" is [Public Domain](LICENSE).
 
 ## Authors
-* Thanks to [Google Fonts](https://fonts.google.com/icons) for the logo!
-* GERARD Angelo
+* 0x546F6D (pttb)
+* [Google Fonts](https://fonts.google.com/icons) (logo)
+* A lot of open source contributors
+* Angelo
 

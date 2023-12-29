@@ -1,6 +1,6 @@
 # Please modify the following variables to match your environment
 
-# This is the path to the executable used to launch the VPN client using command line called the launcher
+# This is the path to the executable used to launch the VPN client with command line called 'pulselauncher'
 vpn_launcher = "C:\Program Files (x86)\Common Files\Pulse Secure\Integration\pulselauncher.exe"
 
 # This is the URL used to connect to your company's VPN server
