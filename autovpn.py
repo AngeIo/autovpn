@@ -102,7 +102,8 @@ def main():
 
         if type(variables.vpn_pw) != bytes:
             variables.vpn_pw = variables.vpn_pw.encode("utf-8")
-        subprocess.check_output([variables.vpn_launcher, "-url", variables.vpn_url, "-u", variables.vpn_user, "-p", decrypt(variables.vpn_pw, mykey).decode(), "-r", variables.vpn_domain])
+        CREATE_NO_WINDOW = 0x08000000
+        subprocess.run([variables.vpn_launcher, "-url", variables.vpn_url, "-u", variables.vpn_user, "-p", decrypt(variables.vpn_pw, mykey).decode(), "-r", variables.vpn_domain], creationflags=CREATE_NO_WINDOW)
 
     # If error, then:
     except Exception as e:
