@@ -3,7 +3,7 @@
 # This is the path to the executable used to launch the VPN client with command line called 'pulselauncher'
 vpn_launcher = "C:\Program Files (x86)\Common Files\Pulse Secure\Integration\pulselauncher.exe"
 
-# This is the URL used to connect to your company's VPN server
+# This is the URL used to connect to your VPN server
 vpn_url = "https://myvpn.company.com/myportal"
 
 # Your VPN username
@@ -14,3 +14,6 @@ vpn_pw = "gAAAAABlSSIKowbS_lv9sKG24euFIVt3NTg0oK5hvA3cO6UxvUk7gNi7GZYOsNZvuRAZhl
 
 # The default domain of the VPN's internal network
 vpn_domain = "internal.company.com"
+
+# This is the domain of an internal host used to test if the connection is working with your VPN server
+vpn_testdomain = "company.internal"
