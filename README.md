@@ -89,7 +89,7 @@ To execute the script, start your Windows PC to run `autovpn`!
 The source code for "autovpn" is [Public Domain](LICENSE).
 
 ## Authors
-* 0x546F6D (pttb)
+* [0x546F6D](https://github.com/0x546F6D) (pttb)
 * [Google Fonts](https://fonts.google.com/icons) (logo)
 * A lot of open source contributors
 * Angelo
