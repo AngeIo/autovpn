@@ -9,6 +9,7 @@ Connect to your VPN through *Ivanti Secure Access Client* (formerly *Pulse Secur
 ## Features / To-do list
 - [x] Auto-connect to the VPN when logging-in to your Windows computer!
 - [x] Easy installation using included script!
+- [x] Secure your password in a encrypted format!
 - [ ] Even easier installation (improve first time setup with password generation, prompting user through the script to auto-fill the variables.py file, etc.)
 - [ ] Support for Linux (only tested on Windows)
 
