@@ -4,12 +4,12 @@
 
 # autoVPN
 
-Connect to your VPN through Ivanti Secure Access Client (formerly Pulse Secure Client) automatically when booting Windows!
+Connect to your VPN through *Ivanti Secure Access Client* (formerly *Pulse Secure Client*) automatically when booting Windows!
 
 ## Features / To-do list
-- [x] Easy auto-connect to the VPN when logging-in to your Windows computer!
+- [x] Auto-connect to the VPN when logging-in to your Windows computer!
 - [x] Easy installation using included script!
-- [ ] Easier installation (improve first time setup with password generation etc.)
+- [ ] Even easier installation (improve first time setup with password generation, prompting user through the script to auto-fill the variables.py file, etc.)
 - [ ] Support for Linux (only tested on Windows)
 
 ## Installation
