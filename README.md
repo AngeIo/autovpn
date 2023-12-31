@@ -84,6 +84,7 @@ python utils/make.py
 
 ### Run the Script
 To execute the script, start your Windows PC to run `autovpn`!
+
 You can also click on the taskbar shortcut if you were disconnected for some reason!
 
 ## License
