@@ -4,9 +4,9 @@
 
 # autoVPN
 > [!CAUTION]
-> For now, this project's way of operating could be insecure because your password is sent without encryption to the `pulselauncher.exe` in the command line and could expose it to a potential hacker.
+> For now, this project's way of operating could be insecure because your password is sent without encryption to the `pulselauncher.exe` in the command line and could expose it to a potential hacker if your computer has breached.
 >
-> Also, it's not good practice to automatically connect to an organization's VPN on your session's startup, especially if you don't have to enter a password. It makes your company's internal network vulnerable if your PC is compromised.
+> Also, it's not good practice to automatically connect to an organization's VPN on your session's startup, especially if you don't have to enter a password. If your PC is compromised, it could make your company's internal network potentially vulnerable.
 >
 > Please proceed with caution!
 
