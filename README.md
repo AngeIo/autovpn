@@ -4,11 +4,11 @@
 
 # autoVPN
 > [!CAUTION]
-> For now, this project's way of operating could be unsecure because your password is sent without encryption to the `pulselauncher.exe` in command line and could be read by a potential hacker.
-> 
-> Also, it's not a good practice to connect automatically to an organization VPN on startup, especially if you don't have to type any password, making the internal network of your company vulnerable if your PC is compromised.
+> For now, this project's way of operating could be insecure because your password is sent without encryption to the `pulselauncher.exe` in the command line and could expose it to a potential hacker.
 >
-> Please, proceed with caution!
+> Also, it's not good practice to automatically connect to an organization's VPN on your session's startup, especially if you don't have to enter a password. It makes your company's internal network vulnerable if your PC is compromised.
+>
+> Please proceed with caution!
 
 Connect to your VPN through *Ivanti Secure Access Client* (formerly *Pulse Secure Client*) automatically when booting Windows!
 
