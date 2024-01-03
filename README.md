@@ -10,7 +10,7 @@
 >
 > Please proceed with caution!
 
-Connect to your VPN through *Ivanti Secure Access Client* (formerly *Pulse Secure Client*) automatically when booting Windows!
+Connect to your VPN through *Ivanti Secure Access Client* (formerly *Pulse Secure Client*) automatically when logging in to Windows!
 
 ## Features / To-do list
 - [x] Auto-connect to the VPN when logging-in to your Windows computer!
